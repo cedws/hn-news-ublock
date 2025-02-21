@@ -20,9 +20,9 @@ def generate_filter_rules(terms):
     # Full set of rules including the tr selectors
     rules = [
         base_rule,
-        comment_rule,
         f'{base_rule} + tr',
-        f'{base_rule} + tr + tr'
+        f'{base_rule} + tr + tr',
+        comment_rule,
     ]
 
     return header + '\n'.join(rules)
