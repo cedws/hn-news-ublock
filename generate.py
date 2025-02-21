@@ -15,10 +15,12 @@ def generate_filter_rules(terms):
 
     # Base rule template
     base_rule = f'news.ycombinator.com##.submission:has-text(/\\b({regex_pattern})\\b/i)'
+    comment_rule = f'news.ycombinator.com##.comment:has-text(/\\b({regex_pattern})\\b/i)'
 
     # Full set of rules including the tr selectors
     rules = [
         base_rule,
+        comment_rule,
         f'{base_rule} + tr',
         f'{base_rule} + tr + tr'
     ]
